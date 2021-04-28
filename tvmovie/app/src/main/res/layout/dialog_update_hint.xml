@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/update_dialog_bg"
+    android:orientation="vertical"
+    android:padding="30pt">
+
+    <TextView
+        android:layout_width="300pt"
+        android:layout_height="wrap_content"
+        android:background="@drawable/splash_focus"
+        android:text="当前版本更新内容：\n1、修改搜索界面逻辑\n2、修复首页在数据加载失败不能切换源的问题\n3、优化历史记录"
+        android:textColor="@android:color/black"
+        android:textSize="18pt" />
+
+</LinearLayout>
