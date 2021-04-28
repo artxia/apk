@@ -37,7 +37,7 @@ jobs:
         sed -i "s/gradle-4.4-all/gradle-6.5-all/g" gradle/wrapper/gradle-wrapper.properties
         rm -f local.properties
         chmod +x gradlew
-        ./gradlew build
+        ./gradlew assembleRelease
 
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.2.2
