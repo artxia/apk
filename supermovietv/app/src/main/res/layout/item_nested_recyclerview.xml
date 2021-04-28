@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.owen.tvrecyclerview.widget.TvRecyclerView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nestlist"
+    android:layout_width="match_parent"
+    android:layout_height="40pt"
+    android:focusable="true"
+    android:orientation="horizontal"
+    app:tv_layoutManager="V7LinearLayoutManager"
+    android:padding="20pt"/>
