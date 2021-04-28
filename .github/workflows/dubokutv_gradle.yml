@@ -1,0 +1,44 @@
+name: DubokuTV with Gradle
+
+on:
+  workflow_dispatch:
+    inputs:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up JDK 1.8
+      uses: actions/setup-java@v1
+      with:
+        java-version: 1.8
+
+    - name: Git Clone Repository
+      run: |
+        git clone https://github.com/chenliang0571/duboku-tv.git gitclone
+
+    - name: Deploy to Pages
+      uses: JamesIves/github-pages-deploy-action@4.1.1
+      with:
+        git-config-name: GitHub Action
+        git-config-email: action@github.com
+        branch: main
+        folder: gitclone
+        target-folder: dubokutv
+        commit-message: Action Update
+        clean: true
+        single-commit: false
+
+    - name: Build with Gradle
+      run: |
+        cd gitclone
+        chmod +x gradlew
+        ./gradlew build
+
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v2.2.2
+      with:
+          name: app
+          path: gitclone/app/build/outputs/apk
