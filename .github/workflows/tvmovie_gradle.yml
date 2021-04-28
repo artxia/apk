@@ -34,9 +34,9 @@ jobs:
     - name: Build with Gradle
       run: |
         cd gitclone
-        sed -i "s/gradle-6.1.1-all/gradle-6.5-all/g" gradle/wrapper/gradle-wrapper.properties
+        sed -i "s/gradle-6.1.1-all/gradle-6.8.2-all/g" gradle/wrapper/gradle-wrapper.properties
         chmod +x gradlew
-        ./gradlew build
+        ./gradlew assembleRelease
 
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.2.2
